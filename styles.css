@@ -59,7 +59,26 @@ button:hover {
     display: none;
 }
 
-#surprise {
+/* Proposal Animation */
+#proposal {
+    margin-top: 20px;
+}
+
+.ring {
+    font-size: 4em;
+    animation: float 2s ease-in-out infinite;
+}
+
+#acceptButton {
+    margin-top: 10px;
+    background-color: #4caf50; /* Green for acceptance */
+}
+
+#acceptButton:hover {
+    background-color: #388e3c;
+}
+
+#acceptedMessage {
     margin-top: 20px;
     font-size: 1.5em;
     animation: bounce 1s ease infinite;
