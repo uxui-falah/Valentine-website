@@ -36,120 +36,33 @@ p {
 }
 
 p:hover {
-    transform: scale(1.1); /* Hover effect */
-}
+// Confetti Animation
+const proposeButton = document.getElementById('proposeButton');
+const proposal = document.getElementById('proposal');
+const acceptButton = document.getElementById('acceptButton');
+const acceptedMessage = document.getElementById('acceptedMessage');
+const canvas = document.getElementById('confetti');
+const romanticMusic = document.getElementById('romanticMusic');
 
-button {
-    background-color: #d32f2f;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+proposeButton.addEventListener('click', () => {
+    proposeButton.classList.add('hidden');
+    proposal.classList.remove('hidden');
+    romanticMusic.play(); // Play romantic music
+});
 
-button:hover {
-    background-color: #b71c1c;
-    transform: scale(1.1); /* Hover effect */
-}
+acceptButton.addEventListener('click', () => {
+    proposal.classList.add('hidden');
+    acceptedMessage.classList.remove('hidden');
+    startConfetti();
+});
 
-.hidden {
-    display: none;
-}
+function startConfetti() {
+    const confettiSettings = { target: 'confetti', max: 150, size: 1.5, animate: true };
+    const confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
 
-/* Proposal Animation */
-#proposal {
-    margin-top: 20px;
-}
-
-.ring {
-    font-size: 4em;
-    animation: float 2s ease-in-out infinite;
-}
-
-#acceptButton {
-    margin-top: 10px;
-    background-color: #4caf50; /* Green for acceptance */
-}
-
-#acceptButton:hover {
-    background-color: #388e3c;
-}
-
-#acceptedMessage {
-    margin-top: 20px;
-    font-size: 1.5em;
-    animation: bounce 1s ease infinite;
-}
-
-/* Heart Animation */
-.hearts {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.heart {
-    position: absolute;
-    font-size: 2em;
-    animation: fall 5s linear infinite;
-}
-
-.heart:nth-child(1) {
-    left: 5%;
-    animation-delay: 0s;
-}
-
-.heart:nth-child(2) {
-    left: 20%;
-    animation-delay: 1s;
-}
-
-.heart:nth-child(3) {
-    left: 35%;
-    animation-delay: 2s;
-}
-
-.heart:nth-child(4) {
-    left: 50%;
-    animation-delay: 3s;
-}
-
-.heart:nth-child(5) {
-    left: 65%;
-    animation-delay: 4s;
-}
-
-/* Keyframes for Animations */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes fall {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(100vh);
-    }
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+    // Stop confetti after 5 seconds
+    setTimeout(() => {
+        confetti.clear();
+    }, 5000);
 }
