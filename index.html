@@ -10,9 +10,14 @@
     <div class="container">
         <h1>Happy Valentine's Day!</h1>
         <p>Wishing you a day filled with love, joy, and happiness.</p>
-        <button id="heartButton">Click for a Surprise!</button>
-        <div id="surprise" class="hidden">
-            <p>💖 You are loved! 💖</p>
+        <button id="proposeButton">Click for a Surprise!</button>
+        <div id="proposal" class="hidden">
+            <div class="ring">💍</div>
+            <p>Will you be my Valentine?</p>
+            <button id="acceptButton">Yes, I will! 💖</button>
+        </div>
+        <div id="acceptedMessage" class="hidden">
+            <p>Yay! You made me the happiest person today! 💕</p>
         </div>
     </div>
 
@@ -27,6 +32,12 @@
 
     <!-- Confetti Animation -->
     <canvas id="confetti"></canvas>
+
+    <!-- Romantic Music -->
+    <audio id="romanticMusic" loop>
+        <source src="romantic-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
     <script src="script.js"></script>
 </body>
