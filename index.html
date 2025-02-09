@@ -3,41 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Valentine's Day Surprise</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Social Media Share Buttons -->
+    <div class="social-share">
+        <a href="#" onclick="shareOnWhatsApp()" class="whatsapp animated-share">WhatsApp</a>
+        <a href="#" onclick="shareOnTwitter()" class="twitter animated-share">Twitter</a>
+        <a href="#" onclick="shareOnFacebook()" class="facebook animated-share">Facebook</a>
+    </div>
+
     <div class="container">
-        <h1>Happy Valentine's Day!</h1>
-        <p>Wishing you a day filled with love, joy, and happiness.</p>
-        <button id="proposeButton">Click for a Surprise!</button>
-        <div id="proposal" class="hidden">
-            <div class="ring">💍</div>
-            <p>Will you be my Valentine?</p>
-            <button id="acceptButton">Yes, I will! 💖</button>
-        </div>
-        <div id="acceptedMessage" class="hidden">
-            <p>Yay! You made me the happiest person today! 💕</p>
+        <h1 class="glow">Happy Valentine's Day! ❤️</h1>
+        <p class="message">Click the heart below for a surprise ♥</p>
+        <div class="heart animated-heart" onclick="revealSecret()"></div>
+        <p id="secretMessage" class="hidden">You are my everything ❤️</p>
+
+        <!-- Love Quotes Section -->
+        <div class="quotes-container">
+            <h2 class="glowing-text">💖 Romantic Love Quotes 💖</h2>
+            <p id="quote">"Love is not about how many days, months, or years you have been together. It’s about how much you love each other every day."</p>
+            <button onclick="newQuote()">New Quote</button>
         </div>
     </div>
 
-    <!-- Heart Animation -->
-    <div class="hearts">
-        <div class="heart">💖</div>
-        <div class="heart">💖</div>
-        <div class="heart">💖</div>
-        <div class="heart">💖</div>
-        <div class="heart">💖</div>
-    </div>
-
-    <!-- Confetti Animation -->
-    <canvas id="confetti"></canvas>
-
-    <!-- Romantic Music -->
-    <audio id="romanticMusic" loop>
-        <source src="romantic-music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <!-- Floating Hearts Animation -->
+    <div id="hearts-container"></div>
 
     <script src="script.js"></script>
 </body>
