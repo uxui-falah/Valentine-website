@@ -1,128 +1,112 @@
-/* General Styling */
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Center the loader on the page */
 body {
-    background: linear-gradient(to bottom, #ff99cc, #ffcccc);
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* Glowing Effect for Title */
-.glow {
-    font-size: 36px;
-    color: white;
-    text-shadow: 0px 0px 10px red, 0px 0px 20px pink;
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    0% { text-shadow: 0px 0px 10px red; }
-    50% { text-shadow: 0px 0px 20px pink; }
-    100% { text-shadow: 0px 0px 30px purple; }
-}
-
-/* Animated Heart */
-.animated-heart {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    position: relative;
-    display: inline-block;
-    margin-top: 20px;
-    cursor: pointer;
-    transform: rotate(-45deg);
-    animation: bounce 1s infinite, pulse 1.5s infinite alternate;
-}
-
-.animated-heart:before,
-.animated-heart:after {
-    content: "";
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border-radius: 50%;
-    position: absolute;
-}
-
-.animated-heart:before {
-    top: -50px;
-    left: 0;
-}
-
-.animated-heart:after {
-    left: 50px;
-    top: 0;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: scale(1) rotate(-45deg); }
-    50% { transform: scale(1.1) rotate(-45deg); }
-}
-
-@keyframes pulse {
-    from { box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5); }
-    to { box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.8); }
-}
-
-/* Social Media Share Buttons */
-.social-share {
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
 }
 
-.social-share a {
-    padding: 10px 15px;
-    color: white;
-    font-size: 14px;
-    text-decoration: none;
-    border-radius: 20px;
-    transition: 0.3s;
-    font-weight: bold;
+/* Container for the loader and text */
+.loading-container {
+    text-align: center;
 }
 
-/* Social Media Button Colors */
-.whatsapp { background: #25D366; }
-.twitter { background: #1DA1F2; }
-.facebook { background: #3b5998; }
-
-/* Animated Share Button */
-.animated-share {
-    animation: bounceShare 1.5s infinite;
+/* Infinity loader animation */
+.infinity-loader {
+    width: 120px;
+    height: 60px;
+    position: relative;
 }
 
-@keyframes bounceShare {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+.infinity-loader::before,
+.infinity-loader::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border: 6px solid transparent;
+    border-top-color: #00ff88;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
 }
 
-.animated-share:hover {
-    opacity: 0.8;
-    transform: scale(1.2);
+.infinity-loader::after {
+    border-top-color: #ff0077;
+    animation-delay: -1s;
 }
 
-/* Floating Hearts Animation */
-#hearts-container {
+/* Keyframes for the spinning animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Loading text styling */
+.loading-container p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Countdown text styling */
+#countdown {
+    font-size: 16px;
+    color: #ff0077;
+    margin-top: 10px;
+}
+
+/* Modal (Popup) Styling */
+.modal {
+    display: none; /* Hidden by default */
     position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
 }
 
-.heart-float {
-    position: absolute;
-    color: red;
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content p {
     font-size: 24px;
-    animation: floatUp 5s infinite ease-in-out;
+    color: #ff0077;
 }
 
-@keyframes floatUp {
-    from { transform: translateY(100vh) scale(0.5); opacity: 1; }
-    to { transform: translateY(-10vh) scale(1); opacity: 0; }
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
+.close:hover {
+    color: #ff0077;
+}
