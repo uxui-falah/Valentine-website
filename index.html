@@ -3,34 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Surprise</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Infinity Loading with Countdown</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Social Media Share Buttons -->
-    <div class="social-share">
-        <a href="#" onclick="shareOnWhatsApp()" class="whatsapp animated-share">WhatsApp</a>
-        <a href="#" onclick="shareOnTwitter()" class="twitter animated-share">Twitter</a>
-        <a href="#" onclick="shareOnFacebook()" class="facebook animated-share">Facebook</a>
+    <div class="loading-container">
+        <div class="infinity-loader"></div>
+        <p>Loading...</p>
+        <p id="countdown">10 seconds remaining</p>
     </div>
 
-    <div class="container">
-        <h1 class="glow">Happy Valentine's Day! ❤️</h1>
-        <p class="message">Click the heart below for a surprise ♥</p>
-        <div class="heart animated-heart" onclick="revealSecret()"></div>
-        <p id="secretMessage" class="hidden">You are my everything ❤️</p>
-
-        <!-- Love Quotes Section -->
-        <div class="quotes-container">
-            <h2 class="glowing-text">💖 Romantic Love Quotes 💖</h2>
-            <p id="quote">"Love is not about how many days, months, or years you have been together. It’s about how much you love each other every day."</p>
-            <button onclick="newQuote()">New Quote</button>
+    <!-- Popup Modal -->
+    <div id="hackedPopup" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Your data fully hacked! 💀</p>
         </div>
     </div>
-
-    <!-- Floating Hearts Animation -->
-    <div id="hearts-container"></div>
 
     <script src="script.js"></script>
 </body>
