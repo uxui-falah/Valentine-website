@@ -11,9 +11,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #1a1a1a;
+    background-color: #0a0a0a;
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 /* Container for the loader and text */
@@ -21,47 +21,40 @@ body {
     text-align: center;
 }
 
-/* Infinity loader animation */
-.infinity-loader {
-    width: 120px;
-    height: 60px;
+/* Futuristic loader design */
+.futuristic-loader {
+    width: 300px;
+    height: 10px;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
     position: relative;
+    margin: 20px auto;
 }
 
-.infinity-loader::before,
-.infinity-loader::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 60px;
-    border: 6px solid transparent;
-    border-top-color: #00ff88;
-    border-radius: 50%;
-    animation: spin 2s linear infinite;
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #00ff88, #ff0077);
+    border-radius: 10px;
+    animation: progress 10s linear forwards;
 }
 
-.infinity-loader::after {
-    border-top-color: #ff0077;
-    animation-delay: -1s;
-}
-
-/* Keyframes for the spinning animation */
-@keyframes spin {
+@keyframes progress {
     0% {
-        transform: rotate(0deg);
+        width: 0;
     }
     100% {
-        transform: rotate(360deg);
+        width: 100%;
     }
 }
 
 /* Loading text styling */
-.loading-container p {
+#loadingMessage {
     margin-top: 20px;
     font-size: 18px;
-    color: #fff;
+    color: #00ff88;
+    font-family: 'Courier New', monospace;
 }
 
 /* Countdown text styling */
@@ -69,6 +62,7 @@ body {
     font-size: 16px;
     color: #ff0077;
     margin-top: 10px;
+    font-family: 'Courier New', monospace;
 }
 
 /* Modal (Popup) Styling */
@@ -97,6 +91,7 @@ body {
 .modal-content p {
     font-size: 24px;
     color: #ff0077;
+    font-family: 'Courier New', monospace;
 }
 
 .close {
